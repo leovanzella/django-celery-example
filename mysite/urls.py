@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from core.views import GenerateRandomUserView
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^generate/', GenerateRandomUserView.as_view(), name='generate'),
 ]
