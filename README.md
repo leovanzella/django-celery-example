@@ -2,8 +2,13 @@
 
 A simple django app that uses celery for creating ```n```users asyncronously.
 
+First, run the django app with `python manage.py runserver`.
+
 ```celery -A mysite worker -l info```
 
+Now run the beat scheduler:
+
+```celery -A mysite beat --loglevel=info```
 
 Capturing celery task messages:
 
